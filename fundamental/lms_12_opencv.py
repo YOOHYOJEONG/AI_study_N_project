@@ -14,7 +14,7 @@ from  matplotlib import pyplot as plt
 from tqdm import tqdm
 from PIL import Image
 
-img_path = 'C:/aiffel/lms_practice/cv_practice.png'
+img_path = 'C:/aiffel/lms_practice/data/cv_practice.png'
 img = cv.imread(img_path)
 
 # Convert BGR to HSV
@@ -40,7 +40,7 @@ plt.imshow(cv.cvtColor(res, cv.COLOR_BGR2RGB))
 plt.show()
 
 #%%
-file_path = 'C:/aiffel/lms_practice/cifar-100-python/images'
+file_path = 'C:/aiffel/lms_practice/data/cifar-100-python/images'
 train_file_path = os.path.join(file_path, 'train')
 img_path = os.path.join(file_path, 'cifar-images')
 
