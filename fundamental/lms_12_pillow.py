@@ -14,20 +14,20 @@ from tqdm import tqdm
 data = np.zeros([32, 32, 3], dtype = np.uint8)
 #black image
 image = Image.fromarray(data, 'RGB')
-image
+image.show()
 
 #red image
 data[:,:] = [255,0,0]
 image = Image.fromarray(data, 'RGB')
-image
+image.show()
 
 #white image
 data[:,:] = [255,255,255]
 image = Image.fromarray(data, 'RGB')
-image
+image.show()
 
 #%%
-img_path = 'C:/aiffel/lms_practice/pillow_practice.png'
+img_path = 'C:/aiffel/lms_practice/data/pillow_practice.png'
 img = Image.open(img_path)
 
 print('width:', img.width)
@@ -39,19 +39,19 @@ img.save(new_img_path)
 
 #image resizing 
 resized_img = img.resize((100,200))
-
+resized_img.show()
 #%%
-resized_img_path = 'C:/aiffel/lms_practice/pillow_practice_resized.png'
+resized_img_path = 'C:/aiffel/lms_practice/data/pillow_practice_resized.png'
 resized_img.save(resized_img_path)
 
 #image crop
 crop_img = img.crop((300,100, 600, 4000))
 
-crop_img_path = 'C:/aiffel/lms_practice/pillow_practice_crop.png'
+crop_img_path = 'C:/aiffel/lms_practice/data/pillow_practice_crop.png'
 crop_img.save(crop_img_path)
 
 #%%
-dir_path = 'C:/aiffel/lms_practice/cifar-100-python'
+dir_path = 'C:/aiffel/lms_practice/data/cifar-100-python'
 train_file_path = os.path.join(dir_path, 'train')
 
 with open(train_file_path, 'rb') as f :
@@ -65,9 +65,10 @@ print(data1)
 img_data = train[b'data'][0].reshape([32,32,3], order = 'F')
 img_data = img_data.swapaxes(0,1)
 img = Image.fromarray(img_data)
+img.show()
 
 #%%
-img_save_path = 'C:/aiffel/lms_practice/cifar-100-python/images'
+img_save_path = 'C:/aiffel/lms_practice/data/cifar-100-python/images'
 if not os.path.exists(img_save_path) :
     os.mkdir(img_save_path)
     
